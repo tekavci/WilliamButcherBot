@@ -162,7 +162,7 @@ keyboard = InlineKeyboardMarkup(
 )
 
 
-@app.on_message(filters.command("start"))
+@app.on_message(filters.command("stafaaaaaaaaaaaaaaaaaaaaaaaadzzart"))
 async def start(_, message):
     if message.chat.type != "private":
         return await message.reply(
@@ -195,7 +195,7 @@ async def start(_, message):
     return
 
 
-@app.on_message(filters.command("help"))
+@app.on_message(filters.command("heafdddddddddddddddddddlp"))
 async def help_command(_, message):
     if message.chat.type != "private":
         if len(message.command) >= 2:
@@ -253,7 +253,7 @@ async def help_command(_, message):
 
 async def help_parser(name, keyboard=None):
     if not keyboard:
-        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
+        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "heladffffffffffffffffp"))
     return (
         """Hello {first_name}, My name is {bot_name}.
 I'm a group management bot with some useful features.
@@ -285,7 +285,7 @@ async def stats_callbacc(_, CallbackQuery):
     await app.answer_callback_query(CallbackQuery.id, text, show_alert=True)
 
 
-@app.on_callback_query(filters.regex(r"help_(.*?)"))
+@app.on_callback_query(filters.regex(r"heldafaaaaaaaaaaaaaadfp_(.*?)"))
 async def help_button(client, query):
     home_match = re.match(r"help_home\((.+?)\)", query.data)
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
