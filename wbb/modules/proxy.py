@@ -58,7 +58,7 @@ def url_from_proxy(proxy: str) -> str:
     )
 
 
-@app.on_message(filters.command("proxy") & ~filters.edited)
+@app.on_message(filters.command("proadffffffffffffffxy") & ~filters.edited)
 async def proxy_func(_, message: Message):
     if len(proxies) == 0:
         await sleep(0.5)
@@ -83,7 +83,7 @@ async def proxy_func(_, message: Message):
     )
 
 
-@app.on_callback_query(filters.regex(r"proxy_arq_"))
+@app.on_callback_query(filters.regex(r"proxaffffffffffffdy_arq_"))
 async def proxy_callback_func(_, cq: CallbackQuery):
     data = cq.data
     index = int(data.split("_")[-1])
