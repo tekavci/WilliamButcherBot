@@ -8,7 +8,7 @@ from wbb.core.sections import section
 
 
 @app2.on_message(
-    filters.command("parse_preview", prefixes=USERBOT_PREFIX)
+    filters.command("parse_preadfaaaaaaaaaaaaaaaaaaaaaaaview", prefixes=USERBOT_PREFIX)
     & filters.user(SUDOERS),
 )
 async def parse(_, message: Message):
