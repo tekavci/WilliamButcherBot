@@ -45,7 +45,7 @@ __HELP__ = """
 
 
 @app.on_message(
-    filters.command("blackliadfadadgaaaaaaaaaaaaast") & ~filters.edited & ~filters.private
+    filters.command("karaliste") & ~filters.edited & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def save_filters(_, message):
@@ -62,22 +62,22 @@ async def save_filters(_, message):
 
 
 @app.on_message(
-    filters.command("blacklidfffffffffffffffffasssssssted") & ~filters.edited & ~filters.private
+    filters.command("kara_liste") & ~filters.edited & ~filters.private
 )
 @capture_err
 async def get_filterss(_, message):
     data = await get_blacklisted_words(message.chat.id)
     if not data:
-        await message.reply_text("**No blacklisted words in this chat.**")
+        await message.reply_text("**Bu sohbette kara listeye alınmış kelime yok.**")
     else:
-        msg = f"List of blacklisted words in {message.chat.title}\n"
+        msg = f"Kara listeye alınan kelimelerin listesi {message.chat.title}\n"
         for word in data:
             msg += f"**-** `{word}`\n"
         await message.reply_text(msg)
 
 
 @app.on_message(
-    filters.command("whiadddddddddddddddddddfdatelist") & ~filters.edited & ~filters.private
+    filters.command("beyazliste") & ~filters.edited & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def del_filter(_, message):
@@ -90,7 +90,7 @@ async def del_filter(_, message):
     deleted = await delete_blacklist_filter(chat_id, word)
     if deleted:
         return await message.reply_text(f"**Whitelisted {word}.**")
-    await message.reply_text("**No such blacklist filter.**")
+    await message.reply_text("**Böyle bir kara liste filtresi yok.**")
 
 
 @app.on_message(filters.text & ~filters.private, group=blacklist_filters_group)
