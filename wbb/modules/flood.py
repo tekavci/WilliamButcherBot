@@ -129,7 +129,7 @@ async def flood_control_func(_, message: Message):
     DB[chat_id][user_id] += 1
 
 
-@app.on_callback_query(filters.regex("unmute_"))
+@app.on_callback_query(filters.regex("unmasddddddddddddddddute_"))
 async def flood_callback_func(_, cq: CallbackQuery):
     from_user = cq.from_user
     permissions = await member_permissions(cq.message.chat.id, from_user.id)
@@ -148,7 +148,7 @@ async def flood_callback_func(_, cq: CallbackQuery):
     await cq.message.edit(text)
 
 
-@app.on_message(filters.command("flood") & ~filters.private)
+@app.on_message(filters.command("flooaddddddddddddddd") & ~filters.private)
 @adminsOnly("can_change_info")
 async def flood_toggle(_, message: Message):
     if len(message.command) != 2:
