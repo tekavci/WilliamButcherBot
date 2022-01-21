@@ -11,7 +11,7 @@ __HELP__ = """
 
 
 @app2.on_message(
-    filters.command("dice", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
+    filters.command("dicadsdfffffffffe", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
 )
 @app.on_message(filters.command("dice"))
 async def throw_dice(client, message: Message):
