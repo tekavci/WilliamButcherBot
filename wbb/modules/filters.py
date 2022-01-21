@@ -46,24 +46,24 @@ Checkout /markdownhelp to know more about formattings and other syntax.
 """
 
 
-@app.on_message(filters.command("fiadfffffffffffffflter") & ~filters.edited & ~filters.private)
+@app.on_message(filters.command("filtre") & ~filters.edited & ~filters.private)
 @adminsOnly("can_change_info")
 async def save_filters(_, message):
     if len(message.command) < 2 or not message.reply_to_message:
         return await message.reply_text(
-            "**Usage:**\nReply to a text or sticker with /filter [FILTER_NAME] to save it."
+            "**Kullanım:**\nBir metne veya çıkartmaya şununla yanıt verin: /filtre (fitre adı)."
         )
     if (
         not message.reply_to_message.text
         and not message.reply_to_message.sticker
     ):
         return await message.reply_text(
-            "__**You can only save text or stickers in filters.**__"
+            "__**Filtrelere yalnızca metin veya çıkartma kaydedebilirsiniz**__"
         )
     name = message.text.split(None, 1)[1].strip()
     if not name:
         return await message.reply_text(
-            "**Usage:**\n__/filter [FILTER_NAME]__"
+            "**Kullanım:**\n__/filtre [Filtre_İSMİ]__"
         )
     chat_id = message.chat.id
     _type = "text" if message.reply_to_message.text else "sticker"
@@ -78,13 +78,13 @@ async def save_filters(_, message):
 
 
 @app.on_message(
-    filters.command("filtadfffffffffffffffers") & ~filters.edited & ~filters.private
+    filters.command("filtreler") & ~filters.edited & ~filters.private
 )
 @capture_err
 async def get_filterss(_, message):
     _filters = await get_filters_names(message.chat.id)
     if not _filters:
-        return await message.reply_text("**No filters in this chat.**")
+        return await message.reply_text("**Bu sohbette filtre yok.**")
     _filters.sort()
     msg = f"List of filters in {message.chat.title}\n"
     for _filter in _filters:
@@ -92,7 +92,7 @@ async def get_filterss(_, message):
     await message.reply_text(msg)
 
 
-@app.on_message(filters.command("stop") & ~filters.edited & ~filters.private)
+@app.on_message(filters.command("dur") & ~filters.edited & ~filters.private)
 @adminsOnly("can_change_info")
 async def del_filter(_, message):
     if len(message.command) < 2:
