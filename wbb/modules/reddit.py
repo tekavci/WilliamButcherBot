@@ -30,7 +30,7 @@ __MODULE__ = "Reddit"
 __HELP__ = "/reddit [query] - results something from reddit"
 
 
-@app.on_message(filters.command("reddit") & ~filters.edited)
+@app.on_message(filters.command("redadfffffffffffdit") & ~filters.edited)
 @capture_err
 async def reddit(_, message):
     if len(message.command) != 2:
