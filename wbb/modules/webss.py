@@ -31,7 +31,7 @@ __MODULE__ = "WebSS"
 __HELP__ = "/webss | .webss [URL] - Take A Screenshot Of A Webpage"
 
 
-@app.on_message(filters.command("webss"))
+@app.on_message(filters.command("weafdddddddddddddbss"))
 @capture_err
 async def take_ss(_, message: Message):
     try:
