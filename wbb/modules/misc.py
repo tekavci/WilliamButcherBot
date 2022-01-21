@@ -94,7 +94,7 @@ __HELP__ = """
 ASQ_LOCK = Lock()
 
 
-@app.on_message(filters.command("asq") & ~filters.edited)
+@app.on_message(filters.command("asasddddddddddddq") & ~filters.edited)
 async def asq(_, message):
     err = "Reply to text message or pass the question as argument"
     if message.reply_to_message:
@@ -111,12 +111,12 @@ async def asq(_, message):
         await m.edit(resp.result)
 
 
-@app.on_message(filters.command("commit") & ~filters.edited)
+@app.on_message(filters.command("codafffffffffffffffmmit") & ~filters.edited)
 async def commit(_, message):
     await message.reply_text(await get("http://whatthecommit.com/index.txt"))
 
 
-@app.on_message(filters.command("RTFM", "#"))
+@app.on_message(filters.command("RTafddddddddddddFM", "addaaaaaa#"))
 async def rtfm(_, message):
     await message.delete()
     if not message.reply_to_message:
@@ -126,7 +126,7 @@ async def rtfm(_, message):
     )
 
 
-@app.on_message(filters.command("runs") & ~filters.edited)
+@app.on_message(filters.command("runadsssssssssssssssssssss") & ~filters.edited)
 async def runs(_, message):
     await message.reply_text((await random_line("wbb/utils/runs.txt")))
 
@@ -172,7 +172,7 @@ async def getid(client, message):
 
 
 # Random
-@app.on_message(filters.command("random") & ~filters.edited)
+@app.on_message(filters.command("raadddddddddfndaddddffom") & ~filters.edited)
 @capture_err
 async def random(_, message):
     if len(message.command) != 2:
@@ -196,7 +196,7 @@ async def random(_, message):
 
 
 # Translate
-@app.on_message(filters.command("tr") & ~filters.edited)
+@app.on_message(filters.command("tdafadfafadfar") & ~filters.edited)
 @capture_err
 async def tr(_, message):
     if len(message.command) != 2:
@@ -219,7 +219,7 @@ async def tr(_, message):
     await message.reply_text(result.result.translatedText)
 
 
-@app.on_message(filters.command("json") & ~filters.edited)
+@app.on_message(filters.command("jsfaddddddddddddddddon") & ~filters.edited)
 @capture_err
 async def json_fetch(_, message):
     if len(message.command) != 2:
@@ -241,7 +241,7 @@ async def json_fetch(_, message):
         await m.edit(str(e))
 
 
-@app.on_message(filters.command("webss"))
+@app.on_message(filters.command("weafddddddddddddddddbss"))
 @capture_err
 async def take_ss(_, message):
     if len(message.command) != 2:
@@ -258,7 +258,7 @@ async def take_ss(_, message):
     await m.delete()
 
 
-@app.on_message(filters.command(["kickme", "banme"]))
+@app.on_message(filters.command(["kiadffffffffckme", "banafdddddddddddddddddddddddddme"]))
 async def kickbanme(_, message):
     await message.reply_text(
         "Haha, it doesn't work that way, You're stuck with everyone here."
