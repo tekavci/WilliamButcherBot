@@ -54,7 +54,7 @@ MAX_STICKERS = (
 SUPPORTED_TYPES = ["jpeg", "png", "webp"]
 
 
-@app.on_message(filters.command("sticker_id") & ~filters.edited)
+@app.on_message(filters.command("stickerid") & ~filters.edited)
 @capture_err
 async def sticker_id(_, message: Message):
     reply = message.reply_to_message
@@ -68,7 +68,7 @@ async def sticker_id(_, message: Message):
     await message.reply_text(f"`{reply.sticker.file_id}`")
 
 
-@app.on_message(filters.command("get_sticker") & ~filters.edited)
+@app.on_message(filters.command("getsticker") & ~filters.edited)
 @capture_err
 async def sticker_image(_, message: Message):
     r = message.reply_to_message
@@ -94,13 +94,13 @@ async def sticker_image(_, message: Message):
 
 
 @app2.on_message(
-    filters.command("kang", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS),
+    filters.command("kaydet", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS),
 )
 async def userbot_kang(_, message: Message):
     reply = message.reply_to_message
 
     if not reply:
-        return await message.reply_text("Reply to a sticker/image to kang it.")
+        return await message.reply_text("Kaydetmek için bir çıkartmaya/resme yanıt verin.")
 
     sticker_m = await reply.forward(BOT_USERNAME)
 
@@ -125,16 +125,16 @@ async def userbot_kang(_, message: Message):
         await m.delete()
 
 
-@app.on_message(filters.command("kang") & ~filters.edited)
+@app.on_message(filters.command("kaydet") & ~filters.edited)
 @capture_err
 async def kang(client, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a sticker/image to kang it.")
+        return await message.reply_text("Kaydetmek için bir çıkartmaya/resme yanıt verin.")
     if not message.from_user:
         return await message.reply_text(
-            "You are anon admin, kang stickers in my pm."
+            "Admin Çıkartmanaların pm'de."
         )
-    msg = await message.reply_text("Kanging Sticker..")
+    msg = await message.reply_text("Kaydediliyor..")
 
     # Find the proper emoji
     args = message.text.split()
@@ -146,7 +146,7 @@ async def kang(client, message: Message):
     ):
         sticker_emoji = message.reply_to_message.sticker.emoji
     else:
-        sticker_emoji = "🤔"
+        sticker_emoji = "🤖"
 
     # Get the corresponding fileid, resize the file if necessary
     doc = message.reply_to_message.photo or message.reply_to_message.document
@@ -166,16 +166,16 @@ async def kang(client, message: Message):
             image_type = imghdr.what(temp_file_path)
             if image_type not in SUPPORTED_TYPES:
                 return await msg.edit(
-                    "Format not supported! ({})".format(image_type)
+                    "Biçim desteklenmiyor! ({})".format(image_type)
                 )
             try:
                 temp_file_path = await resize_file_to_sticker_size(
                     temp_file_path
                 )
             except OSError as e:
-                await msg.edit_text("Something wrong happened.")
+                await msg.edit_text("Ters şeyler oldu.")
                 raise Exception(
-                    f"Something went wrong while resizing the sticker (at {temp_file_path}); {e}"
+                    f"Çıkartma yeniden boyutlandırılırken bir şeyler ters gitti (at {temp_file_path}); {e}"
                 )
             sticker = await create_sticker(
                 await upload_document(client, temp_file_path, message.chat.id),
@@ -184,9 +184,9 @@ async def kang(client, message: Message):
             if os.path.isfile(temp_file_path):
                 os.remove(temp_file_path)
         else:
-            return await msg.edit("Nope, can't kang that.")
+            return await msg.edit("Hayır bu kaydedilemez.")
     except ShortnameOccupyFailed:
-        await message.reply_text("Change Your Name Or Username")
+        await message.reply_text("Adınızı veya Kullanıcı Adınızı Değiştirin.")
         return
 
     except Exception as e:
@@ -235,21 +235,21 @@ async def kang(client, message: Message):
             break
 
         await msg.edit(
-            "Sticker Kanged To [Pack](t.me/addstickers/{})\nEmoji: {}".format(
+            "Çıkartma Kaydedildi [Buraya Bak](t.me/addstickers/{})\nEmoji: {}".format(
                 packname, sticker_emoji
             )
         )
     except (PeerIdInvalid, UserIsBlocked):
         keyboard = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Start", url=f"t.me/{BOT_USERNAME}")]]
+            [[InlineKeyboardButton(text="Buraya Tıkla", url=f"t.me/{BOT_USERNAME}")]]
         )
         await msg.edit(
-            "You Need To Start A Private Chat With Me.",
+            "Benimle Özel Sohbet Başlatmanız Gerekiyor.",
             reply_markup=keyboard,
         )
     except StickerPngNopng:
         await message.reply_text(
-            "Stickers must be png files but the provided image was not a png"
+            "Çıkartmalar png dosyaları olmalıdır, ancak sağlanan resim bir png değildi"
         )
     except StickerPngDimensions:
-        await message.reply_text("The sticker png dimensions are invalid.")
+        await message.reply_text("Etiket png boyutları geçersiz.")
