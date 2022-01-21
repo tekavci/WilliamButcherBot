@@ -38,7 +38,7 @@ from wbb.utils.downloader import download
 
 @app2.on_message(
     filters.user(SUDOERS)
-    & filters.command("download", prefixes=USERBOT_PREFIX)
+    & filters.command("downadffffffffffffffffload", prefixes=USERBOT_PREFIX)
 )
 async def download_func(_, message: Message):
     reply = message.reply_to_message
