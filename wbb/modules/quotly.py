@@ -71,12 +71,12 @@ def isArgInt(message: Message) -> list:
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a message to quote it.")
+        return await message.reply_text("Çıkartma yapmak için bir mesaja cevap verin.")
     if not message.reply_to_message.text:
         return await message.reply_text(
-            "Replied message has no text, can't quote it."
+            "Yanıtlanan Mesajda Metin Yok Çıkartma Yapılamaz."
         )
-    m = await message.reply_text("Quoting Messages")
+    m = await message.reply_text("Çıkartma Yapılıyor...")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 
@@ -84,7 +84,7 @@ async def quotly_func(client, message: Message):
         arg = isArgInt(message)
         if arg[0]:
             if arg[1] < 2 or arg[1] > 10:
-                return await m.edit("Argument must be between 2-10.")
+                return await m.edit("Argüman 2-10 arasında olmalıdır.")
 
             count = arg[1]
 
@@ -106,7 +106,7 @@ async def quotly_func(client, message: Message):
         else:
             if getArg(message) != "r":
                 return await m.edit(
-                    "Incorrect Argument, Pass **'r'** or **'INT'**, **EX:** __/q 2__"
+                    "Yanlış Argüman"
                 )
             reply_message = await client.get_messages(
                 message.chat.id,
@@ -116,11 +116,11 @@ async def quotly_func(client, message: Message):
             messages = [reply_message]
     else:
         return await m.edit(
-            "Incorrect argument, check quotly module in help section."
+            "Yanlış Argüman"
         )
     try:
         if not message:
-            return await m.edit("Something went wrong.")
+            return await m.edit("Bir şeyler yanlış gitti.")
 
         sticker = await quotify(messages)
         if not sticker[0]:
@@ -132,10 +132,10 @@ async def quotly_func(client, message: Message):
         sticker.close()
     except Exception as e:
         await m.edit(
-            "Something went wrong while quoting messages,"
-            + " This error usually happens when there's a "
-            + " message containing something other than text,"
-            + " or one of the messages in-between are deleted."
+            "Mesajlardan alıntı yapılırken bir şeyler ters gitti"
+            + " Bu hata genellikle bir "
+            + " Metinden Başka Birşey İçeren Mesaj"
+            + " veya aradaki mesajlardan biri silinir."
         )
         e = format_exc()
         print(e)
