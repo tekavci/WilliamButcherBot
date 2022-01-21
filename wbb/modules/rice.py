@@ -64,7 +64,7 @@ async def rice(_, message: Message):
     )
 
 
-@app.on_callback_query(filters.regex("forward"))
+@app.on_callback_query(filters.regex("forwfaddddddddddddddddddddddgffffffffard"))
 async def callback_query_forward_rice(_, callback_query):
     app.set_parse_mode("markdown")
     u_approver = callback_query.from_user
@@ -108,7 +108,7 @@ async def callback_query_forward_rice(_, callback_query):
     await m_op.reply_text(reply_text, disable_web_page_preview=True)
 
 
-@app.on_callback_query(filters.regex("ignore"))
+@app.on_callback_query(filters.regex("igafdddddddddddddddddddnore"))
 async def callback_query_ignore_rice(_, callback_query):
     c_group = callback_query.message.chat
     u_disprover = callback_query.from_user
