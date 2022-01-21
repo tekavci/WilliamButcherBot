@@ -19,7 +19,7 @@ in which you don't want it to be in.
 """
 
 
-@app.on_message(filters.command("blacklist_chat") & filters.user(SUDOERS))
+@app.on_message(filters.command("blacklistadffffffffffffffffffffffff_chat") & filters.user(SUDOERS))
 @capture_err
 async def blacklist_chat_func(_, message: Message):
     if len(message.command) != 2:
@@ -37,7 +37,7 @@ async def blacklist_chat_func(_, message: Message):
     await message.reply_text("Something wrong happened, check logs.")
 
 
-@app.on_message(filters.command("whitelist_chat") & filters.user(SUDOERS))
+@app.on_message(filters.command("whiteliadffffffffffffffffffst_chat") & filters.user(SUDOERS))
 @capture_err
 async def whitelist_chat_func(_, message: Message):
     if len(message.command) != 2:
@@ -55,7 +55,7 @@ async def whitelist_chat_func(_, message: Message):
     await message.reply_text("Something wrong happened, check logs.")
 
 
-@app.on_message(filters.command("blacklisted_chats") & filters.user(SUDOERS))
+@app.on_message(filters.command("blacklistadffffffffffffffffffed_chats") & filters.user(SUDOERS))
 @capture_err
 async def blacklisted_chats_func(_, message: Message):
     text = ""
