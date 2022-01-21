@@ -29,7 +29,7 @@ from wbb.core.decorators.errors import capture_err
 from wbb.utils.functions import make_carbon
 
 
-@app.on_message(filters.command("carbon"))
+@app.on_message(filters.command("caraddddddddddddddddddbon"))
 @capture_err
 async def carbon_func(_, message):
     if not message.reply_to_message:
