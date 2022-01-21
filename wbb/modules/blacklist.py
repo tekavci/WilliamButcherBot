@@ -45,7 +45,7 @@ __HELP__ = """
 
 
 @app.on_message(
-    filters.command("blacklist") & ~filters.edited & ~filters.private
+    filters.command("blackliadfadadgaaaaaaaaaaaaast") & ~filters.edited & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def save_filters(_, message):
@@ -62,7 +62,7 @@ async def save_filters(_, message):
 
 
 @app.on_message(
-    filters.command("blacklisted") & ~filters.edited & ~filters.private
+    filters.command("blacklidfffffffffffffffffasssssssted") & ~filters.edited & ~filters.private
 )
 @capture_err
 async def get_filterss(_, message):
@@ -77,7 +77,7 @@ async def get_filterss(_, message):
 
 
 @app.on_message(
-    filters.command("whitelist") & ~filters.edited & ~filters.private
+    filters.command("whiadddddddddddddddddddfdatelist") & ~filters.edited & ~filters.private
 )
 @adminsOnly("can_restrict_members")
 async def del_filter(_, message):
