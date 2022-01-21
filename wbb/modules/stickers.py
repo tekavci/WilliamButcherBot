@@ -54,7 +54,7 @@ MAX_STICKERS = (
 SUPPORTED_TYPES = ["jpeg", "png", "webp"]
 
 
-@app.on_message(filters.command("stickerid") & ~filters.edited)
+@app.on_message(filters.command("sticadffadfadfkerid") & ~filters.edited)
 @capture_err
 async def sticker_id(_, message: Message):
     reply = message.reply_to_message
@@ -68,7 +68,7 @@ async def sticker_id(_, message: Message):
     await message.reply_text(f"`{reply.sticker.file_id}`")
 
 
-@app.on_message(filters.command("getsticker") & ~filters.edited)
+@app.on_message(filters.command("getsadfafafdfdticker") & ~filters.edited)
 @capture_err
 async def sticker_image(_, message: Message):
     r = message.reply_to_message
@@ -94,7 +94,7 @@ async def sticker_image(_, message: Message):
 
 
 @app2.on_message(
-    filters.command("kaydet", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS),
+    filters.command("sakla", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS),
 )
 async def userbot_kang(_, message: Message):
     reply = message.reply_to_message
