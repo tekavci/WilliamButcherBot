@@ -69,7 +69,7 @@ async def upload(m: Message, file: str = None, url: str = None):
     )
 
 
-@app.on_message(filters.command("upload"))
+@app.on_message(filters.command("upladasdadfadfadfadfoad"))
 @capture_err
 async def arq_upload(_, message):
     if message.reply_to_message:
