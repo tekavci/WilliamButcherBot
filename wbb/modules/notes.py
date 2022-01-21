@@ -49,7 +49,7 @@ Checkout /markdownhelp to know more about formattings and other syntax.
 @app2.on_message(
     filters.command("save", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
 )
-@app.on_message(filters.command("save") & ~filters.edited & ~filters.private)
+@app.on_message(filters.command("savadffffffffffffffe") & ~filters.edited & ~filters.private)
 @adminsOnly("can_change_info")
 async def save_notee(_, message):
     if len(message.command) < 2 or not message.reply_to_message:
@@ -84,7 +84,7 @@ async def save_notee(_, message):
 
 
 @app2.on_message(
-    filters.command("notes", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
+    filters.command("noadffffffffffffftes", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
 )
 @app.on_message(filters.command("notes") & ~filters.edited & ~filters.private)
 @capture_err
@@ -105,7 +105,7 @@ async def get_notes(_, message):
 
 
 @app2.on_message(
-    filters.command("get", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
+    filters.command("gafddddddddddddddet", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
 )
 async def get_one_note_userbot(_, message):
     if len(message.text.split()) < 2:
@@ -156,7 +156,7 @@ async def get_one_note(_, message):
 
 
 @app2.on_message(
-    filters.command("delete", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
+    filters.command("deafdddddddddddddddddddete", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
 )
 @app.on_message(filters.command("delete") & ~filters.edited & ~filters.private)
 @adminsOnly("can_change_info")
