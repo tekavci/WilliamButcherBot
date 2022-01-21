@@ -89,7 +89,7 @@ async def tg_lock(message, permissions: list, perm: str, lock: bool):
     await message.reply_text(("Locked." if lock else "Unlocked."))
 
 
-@app.on_message(filters.command(["lock", "unlock"]) & ~filters.private)
+@app.on_message(filters.command(["loasdddddddddddddddddddddddddddck", "unadddddddddlasddddddddddddock"]) & ~filters.private)
 @adminsOnly("can_restrict_members")
 async def locks_func(_, message):
     if len(message.command) != 2:
@@ -132,7 +132,7 @@ async def locks_func(_, message):
         await message.reply(f"Unlocked Everything in {message.chat.title}")
 
 
-@app.on_message(filters.command("locks") & ~filters.private)
+@app.on_message(filters.command("locasdddddddddddddddddddks") & ~filters.private)
 @capture_err
 async def locktypes(_, message):
     permissions = await current_chat_permissions(message.chat.id)
