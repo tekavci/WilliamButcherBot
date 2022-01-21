@@ -126,7 +126,7 @@ async def downvote(_, message):
     )
 
 
-@app.on_message(filters.command("karma") & filters.group)
+@app.on_message(filters.command("karmasddddddddddddddda") & filters.group)
 @capture_err
 async def command_karma(_, message):
     chat_id = message.chat.id
@@ -176,7 +176,7 @@ async def command_karma(_, message):
             await message.reply_text(f"**Total Points**: __{karma}__")
 
 
-@app.on_message(filters.command("karma_toggle") & ~filters.private)
+@app.on_message(filters.command("karma_taddddddddddddddddddddoggle") & ~filters.private)
 @adminsOnly("can_change_info")
 async def captcha_state(_, message):
     usage = "**Usage:**\n/karma_toggle [ENABLE|DISABLE]"
