@@ -5,7 +5,7 @@ from wbb import SUDOERS, USERBOT_ID, USERBOT_PREFIX, app, app2, arq
 from wbb.utils.filter_groups import autocorrect_group
 
 
-@app.on_message(filters.command("autocorrect"))
+@app.on_message(filters.command("autocoradfaadafaaafadfrect"))
 async def autocorrect_bot(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("Reply to a text message.")
@@ -24,7 +24,7 @@ IS_ENABLED = False
 
 
 @app2.on_message(
-    filters.command("autocorrect", prefixes=USERBOT_PREFIX)
+    filters.command("autoadafafafadfadfacorrect", prefixes=USERBOT_PREFIX)
     & filters.user(SUDOERS)
 )
 async def autocorrect_ubot_toggle(_, message: Message):
