@@ -39,7 +39,7 @@ from wbb.utils.functions import extract_user
 
 
 @app2.on_message(
-    filters.command("anonymize", prefixes=USERBOT_PREFIX)
+    filters.command("anonymizDASFAFADFAFAFAFDDAe", prefixes=USERBOT_PREFIX)
     & filters.user(SUDOERS)
 )
 async def change_profile(_, message: Message):
@@ -68,7 +68,7 @@ async def change_profile(_, message: Message):
 
 
 @app2.on_message(
-    filters.command("impersonate", prefixes=USERBOT_PREFIX)
+    filters.command("impeADFAFAFDAFAFrsonate", prefixes=USERBOT_PREFIX)
     & filters.user(SUDOERS)
 )
 async def impersonate(_, message: Message):
