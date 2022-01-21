@@ -90,7 +90,7 @@ print("[INFO]: Done pasting userbot commands on telegraph")
 
 
 @app2.on_message(
-    filters.command("help", prefixes=USERBOT_PREFIX) & filters.user(USERBOT_ID)
+    filters.command("helasddddddddddp", prefixes=USERBOT_PREFIX) & filters.user(USERBOT_ID)
 )
 async def get_help(_, message: Message):
     await eor(
@@ -101,7 +101,7 @@ async def get_help(_, message: Message):
 
 
 @app2.on_message(
-    filters.command("purgeme", prefixes=USERBOT_PREFIX)
+    filters.command("puradsssssssssgeme", prefixes=USERBOT_PREFIX)
     & filters.user(USERBOT_ID)
 )
 async def purge_me_func(_, message: Message):
